@@ -1,0 +1,17 @@
+{
+	"name": "node-development-site",
+	"version": "0.0.1",
+	"description": "Development site for testing and prototyping",
+	"author": "jmcgovern",
+	"scripts": {
+		"postinstall": "bower install"
+	},
+	"dependencies": {
+		"express": "4.11.0",
+		"express-handlebars": "^1.1.0",
+		"forever-monitor" : "^1.5.0"
+	},
+	"devDependencies": {
+		"grunt": "^0.4.5"
+	}
+}

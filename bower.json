@@ -1,0 +1,21 @@
+{
+  "name": "node.js Development Site",
+  "version": "0.0.1",
+  "description": "Development site for testing and prototyping",
+  "authors": [
+    "jmcgovern"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "requirejs": "~2.1.5",
+    "jquery": "~1.9.1"
+  }
+}
