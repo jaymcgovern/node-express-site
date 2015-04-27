@@ -1,4 +1,5 @@
 var forever     = require( 'forever-monitor' ),
+    Log         = require( 'log' ),
     numRestarts = 10;
 
 var child = new ( forever.Monitor )( './bin/www', {
@@ -7,20 +8,22 @@ var child = new ( forever.Monitor )( './bin/www', {
     watchDirectory: '.'
 } );
 
+var log = new Log( 'info' );
+
 child.on( 'start', function () {
-	console.log( './bin/www has started' );
+	log.info( './bin/www has started' );
 } );
 
 child.on( 'restart', function () {
-	console.log( './bin/www has restarted' );
+	log.info( './bin/www has restarted' );
 } );
 
 child.on( 'stop', function () {
-    console.log( './bin/www  has stopped' );
+    log.info( './bin/www has stopped' );
 } );
 
 child.on( 'exit', function () {
-    console.log( './bin/www  has exited after ' + numRestarts + ' restarts' );
+    log.info( './bin/www has exited after %s restarts', numRestarts );
 } );
 
 child.start();
