@@ -1,9 +1,9 @@
-var express    = require( 'express' ),
-	path       = require('path'),
-	handlebars = require( 'express-handlebars' ),
-    Log        = require( 'log' );
+var express    = require( 'express' );
+var path       = require( 'path' );
+var handlebars = require( 'express-handlebars' );
+var Log        = require( 'log' );
 
-var app = module.exports = express();
+var app        = module.exports = express();
 
 // Create a log for every app request.
 app.use( function ( req, res, next ) {
@@ -28,13 +28,10 @@ app.set( 'view engine', 'html' );
 
 // Root path route
 app.get( '/', function ( req, res ) {
-	res.render( 'body', {
-		name: 'Jay'
-	} );
 } );
 
 // Log errors.
-app.use( function( err, req, res, next ) {
+app.use( function ( err, req, res, next ) {
 	req.log.error( err );
 
 	res
